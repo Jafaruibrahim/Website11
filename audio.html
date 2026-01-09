@@ -16,40 +16,33 @@
     wellcome to Audio
   </h1>
   
-    <audio controls>
-    <source src="Bege.mp3" type="audio/mpeg">
-      h
-    <source src="audio.mp3" type="audio/mpeg">
-    
-    
-    Your browser does not support the audio element.
-</audio>
-  
-  <audio controls>
-    <source src="Habu.mp3" type="audio/mpeg">
-    <source src="audio.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
-  <audio controls>
-    <source src="mijinyarinya.mp3" type="audio/mpeg">
-    <source src="audio.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
-  <audio controls>
-    <source src="sirajo1.mp3" type="audio/mpeg">
-    <source src="audio.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
-    <audio controls>
-    <source src="arabsong.mp3" type="audio/mpeg">
-    <source src="audio.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
-  <audio controls>
-    <source src="sudan.mp3" type="audio/mpeg">
-    <source src="audio.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
+    <audio id="audio" controls></audio>
+
+<script>
+const songs = [
+  "arabsong.mp3",
+  "mijinyarinya.mp3",
+  "sirajo1.mp3",
+  "sudan.mp3",
+  "Habu.mp3",
+  "Bege.mp3"
+];
+
+let index = 0;
+const audio = document.getElementById("audio");
+
+audio.src = songs[index];
+audio.play();
+
+audio.addEventListener("ended", () => {
+  index++;
+  if (index < songs.length) {
+    audio.src = songs[index];
+    audio.play();
+  }
+});
+</script>
 </body>
 </html>
+
 
